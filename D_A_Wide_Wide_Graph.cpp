@@ -93,7 +93,7 @@ int main(){
 
     //sieve();
     ll tc=1;
-    cin>>tc;
+    // cin>>tc;
     while(tc--)
     {
         ll n;
@@ -134,13 +134,23 @@ int main(){
         }
         vector<ll> distance_from_thr(n+1,0);
         bfs(adj,n,thr_start,distance_from_thr);
-        
-
-
-
-
-        
-
+        // vector<ll> max_distance(n+1,0);
+        ordered_multiset s;
+        for(ll i = 0; i <n; i++)
+        {
+            s.insert(max(distance_from_sec[i+1], distance_from_thr[i+1]));
+        }
+        ll tree_diameter = root_dist;
+        for(ll i = 1; i <=n; i++)
+        {
+            if (i> tree_diameter)
+            {
+                cout<<n<<" ";
+                continue;
+            }
+            cout<<s.order_of_key(i)+1<<" ";
+        }
+        cout<<endl;
     }
     return 0;
 }
