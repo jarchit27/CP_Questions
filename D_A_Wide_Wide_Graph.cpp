@@ -78,7 +78,6 @@ int main(){
         }
         vector<ll> distance_from_thr(n+1,0);
         bfs(adj,n,thr_start,distance_from_thr);
-        // vector<ll> max_distance(n+1,0);
         ordered_multiset s;
         for(ll i = 0; i <n; i++)
         {

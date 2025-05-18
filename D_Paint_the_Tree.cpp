@@ -115,7 +115,6 @@ int main(){
             continue;
         }
         ll distt = dist[b];
-        // cout<<distt<<endl;
         visited.assign(n+1, false);
         ll pare = b;
         while (parent[pare] != -1)
@@ -127,8 +126,6 @@ int main(){
             }
         }
         dist.assign(n+1, 0);
-
-        // cout<<pare<<" ";
         dfs(pare);
         cout<<ans- *max_element(dist.begin(), dist.end())<<endl;
 
